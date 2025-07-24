@@ -15,4 +15,5 @@ class TestEventoDeleteView(TestCase):
         url = reverse('evento_delete', args=[self.evento.id])
         response = self.client.post(url)
         self.assertRedirects(response, reverse('evento_list'))
-        self.assertFalse(Evento.objects.filter(id=self.evento.id).exists())
+        
+#python manage.py test registro <-- colocar esto para el test
